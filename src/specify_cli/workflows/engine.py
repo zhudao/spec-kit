@@ -508,6 +508,7 @@ class RunState:
         # append_log is never called while _lock is held, the two never nest.
         self._log_lock = threading.Lock()
         self.inputs: dict[str, Any] = {}
+        self.workflow_dir: str | None = None
         self.created_at = datetime.now(timezone.utc).isoformat()
         self.updated_at = self.created_at
         self.log_entries: list[dict[str, Any]] = []
@@ -562,6 +563,7 @@ class RunState:
                 "current_step_index": self.current_step_index,
                 "current_step_id": self.current_step_id,
                 "step_results": self.step_results,
+                "workflow_dir": self.workflow_dir,
                 "created_at": self.created_at,
                 "updated_at": self.updated_at,
             }
@@ -654,6 +656,7 @@ class RunState:
         state.current_step_index = state_data.get("current_step_index", 0)
         state.current_step_id = state_data.get("current_step_id")
         state.step_results = state_data.get("step_results", {})
+        state.workflow_dir = state_data.get("workflow_dir")
         state.created_at = state_data.get("created_at", "")
         state.updated_at = state_data.get("updated_at", "")
 
@@ -810,6 +813,12 @@ class WorkflowEngine:
         # Resolve inputs
         resolved_inputs = self._resolve_inputs(definition, inputs or {})
         state.inputs = resolved_inputs
+        workflow_dir = (
+            str(definition.source_path.resolve().parent)
+            if definition.source_path is not None
+            else None
+        )
+        state.workflow_dir = workflow_dir
         state.status = RunStatus.RUNNING
         state.save()
 
@@ -820,6 +829,7 @@ class WorkflowEngine:
             default_options=definition.default_options,
             project_root=str(self.project_root),
             run_id=state.run_id,
+            workflow_dir=workflow_dir,
         )
 
         # Execute steps
@@ -885,6 +895,7 @@ class WorkflowEngine:
             default_options=definition.default_options,
             project_root=str(self.project_root),
             run_id=state.run_id,
+            workflow_dir=state.workflow_dir,
         )
 
         from . import STEP_REGISTRY
@@ -1197,9 +1208,9 @@ class WorkflowEngine:
         already flipped), so the prefix never drops the actual halting item.
 
         ``max_concurrency`` is coerced with ``int()``; a value that cannot be
-        coerced (``None``, a non-numeric string, …) or that coerces to <= 1 runs
-        sequentially, while a numeric string like ``"4"`` or a float like ``4.0``
-        is honored.
+        coerced (``None``, a non-numeric string, ``.inf``/``.nan``, …) or that
+        coerces to <= 1 runs sequentially, while a numeric string like ``"4"`` or
+        a float like ``4.0`` is honored.
         """
         if not items:
             return []
@@ -1207,7 +1218,9 @@ class WorkflowEngine:
         halting = (RunStatus.PAUSED, RunStatus.FAILED, RunStatus.ABORTED)
         try:
             workers = max(1, int(max_concurrency))
-        except (TypeError, ValueError):
+        except (TypeError, ValueError, OverflowError):
+            # OverflowError: int(float("inf")) — a YAML ``max_concurrency: .inf``
+            # would otherwise crash the whole run instead of falling back.
             workers = 1
         # Never spin up more workers than there is work — bounds a user-controlled
         # max_concurrency from over-allocating threads.
