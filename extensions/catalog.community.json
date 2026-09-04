@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-02T00:00:00Z",
+  "updated_at": "2026-09-03T00:00:00Z",
   "catalog_url": "https://raw.githubusercontent.com/github/spec-kit/main/extensions/catalog.community.json",
   "extensions": {
     "adrkit": {
@@ -1785,6 +1785,40 @@
       "created_at": "2026-07-08T00:00:00Z",
       "updated_at": "2026-07-08T00:00:00Z"
     },
+    "evaluator": {
+      "name": "Evaluator Contract",
+      "id": "evaluator",
+      "description": "Provider-neutral evaluator contract for evidence, provenance, uncertainty, and recovery across Spec-Driven Development phases.",
+      "author": "ElectroHire",
+      "version": "1.0.0",
+      "download_url": "https://github.com/electrohire/spec-kit-evaluator/archive/refs/tags/v1.0.0.zip",
+      "repository": "https://github.com/electrohire/spec-kit-evaluator",
+      "homepage": "https://github.com/electrohire/spec-kit-evaluator",
+      "documentation": "https://github.com/electrohire/spec-kit-evaluator/blob/main/README.md",
+      "changelog": "https://github.com/electrohire/spec-kit-evaluator/blob/main/CHANGELOG.md",
+      "license": "MIT",
+      "category": "process",
+      "effect": "read-write",
+      "requires": {
+        "speckit_version": ">=1.0.0"
+      },
+      "provides": {
+        "commands": 4,
+        "hooks": 4
+      },
+      "tags": [
+        "evaluator",
+        "evidence",
+        "provenance",
+        "quality",
+        "governance"
+      ],
+      "verified": false,
+      "downloads": 0,
+      "stars": 0,
+      "created_at": "2026-09-03T00:00:00Z",
+      "updated_at": "2026-09-03T00:00:00Z"
+    },
     "extensify": {
       "name": "Extensify",
       "id": "extensify",
@@ -2646,10 +2680,10 @@
     "linear": {
       "name": "Linear Integration",
       "id": "linear",
-      "description": "Mirror spec-kit feature directories into Linear (filesystem → Linear, reconcile-based, unidirectional).",
+      "description": "Automatically mirror your spec-kit specs into Linear — one issue per spec, a sub-issue per task phase, kept in sync as you work.",
       "author": "Ash Brener",
-      "version": "0.7.0",
-      "download_url": "https://github.com/ashbrener/spec-kit-linear-sync/archive/refs/tags/v0.7.0.zip",
+      "version": "0.8.0",
+      "download_url": "https://github.com/ashbrener/spec-kit-linear-sync/archive/refs/tags/v0.8.0.zip",
       "repository": "https://github.com/ashbrener/spec-kit-linear-sync",
       "homepage": "https://github.com/ashbrener/spec-kit-linear-sync",
       "documentation": "https://github.com/ashbrener/spec-kit-linear-sync/blob/main/README.md",
@@ -2676,7 +2710,7 @@
       "downloads": 0,
       "stars": 0,
       "created_at": "2026-06-01T00:00:00Z",
-      "updated_at": "2026-06-22T00:00:00Z"
+      "updated_at": "2026-09-03T00:00:00Z"
     },
     "linear-weave": {
       "name": "Linear Weave",
