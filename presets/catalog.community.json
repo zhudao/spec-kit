@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-15T00:00:00Z",
+  "updated_at": "2026-09-23T00:00:00Z",
   "catalog_url": "https://raw.githubusercontent.com/github/spec-kit/main/presets/catalog.community.json",
   "presets": {
     "a11y-governance": {
@@ -306,6 +306,34 @@
       ],
       "created_at": "2026-04-27T00:00:00Z",
       "updated_at": "2026-08-12T00:00:00Z"
+    },
+    "db-standards": {
+      "name": "Database Standards",
+      "id": "db-standards",
+      "version": "0.8.2",
+      "description": "Database conventions for spec-driven work: naming, data-model design, constraints, data protection, performance, query safety, a schema-review checklist, and engine-specific references. ORM-agnostic.",
+      "author": "Guilherme Dakuzaku",
+      "repository": "https://github.com/gdakuzak/spec-kit-preset-db-standards",
+      "download_url": "https://github.com/gdakuzak/spec-kit-preset-db-standards/archive/refs/tags/v0.8.2.zip",
+      "sha256": "6d1a027b29556a9351cfd5150dcab36b41af631c773f3e49d0bad1c49590c42c",
+      "homepage": "https://github.com/gdakuzak/spec-kit-preset-db-standards",
+      "documentation": "https://github.com/gdakuzak/spec-kit-preset-db-standards/blob/main/README.md",
+      "license": "MIT",
+      "requires": {
+        "speckit_version": ">=0.1.0"
+      },
+      "provides": {
+        "templates": 4,
+        "commands": 1
+      },
+      "tags": [
+        "database",
+        "standards",
+        "data-modeling",
+        "performance"
+      ],
+      "created_at": "2026-09-23T00:00:00Z",
+      "updated_at": "2026-09-23T00:00:00Z"
     },
     "explicit-task-dependencies": {
       "name": "Explicit Task Dependencies",
@@ -659,6 +687,39 @@
       "created_at": "2026-04-09T00:00:00Z",
       "updated_at": "2026-04-09T00:00:00Z"
     },
+    "niem": {
+      "name": "NIEM Information Exchanges",
+      "id": "niem",
+      "version": "1.0.1",
+      "description": "Adds evidence-based NIEM exchange modeling to the core, assess, and bugfix processes while preserving their commands, artifacts, and scope.",
+      "author": "mnriem",
+      "repository": "https://github.com/mnriem/spec-kit-presets",
+      "download_url": "https://github.com/mnriem/spec-kit-presets/releases/download/niem-v1.0.1/niem.zip",
+      "sha256": "9a6340f780cabb42bdf48fa1b4dd398e4771ece6ce622df45fe714704e6f3089",
+      "homepage": "https://github.com/mnriem/spec-kit-presets",
+      "documentation": "https://github.com/mnriem/spec-kit-presets/blob/main/niem/README.md",
+      "license": "MIT",
+      "requires": {
+        "speckit_version": ">=1.0.4",
+        "extensions": [
+          "assess",
+          "bug"
+        ]
+      },
+      "provides": {
+        "templates": 7,
+        "commands": 18
+      },
+      "tags": [
+        "niem",
+        "interoperability",
+        "data-modeling",
+        "assess",
+        "bugfix"
+      ],
+      "created_at": "2026-09-23T00:00:00Z",
+      "updated_at": "2026-09-23T00:00:00Z"
+    },
     "openup-governance": {
       "name": "OpenUP Governance",
       "id": "openup-governance",
@@ -743,6 +804,35 @@
         "fun",
         "experimental"
       ]
+    },
+    "project-statistics-governance": {
+      "name": "Project Statistics Governance",
+      "id": "project-statistics-governance",
+      "version": "0.1.0",
+      "description": "Reproducible Git-bound project transparency with offline measurements, explicit write authority and opt-in reference estimates; no AI productivity claims.",
+      "author": "Thorsten Hindermann",
+      "repository": "https://github.com/hindermath/spec-kit-preset-project-statistics-governance",
+      "download_url": "https://github.com/hindermath/spec-kit-preset-project-statistics-governance/archive/refs/tags/v0.1.0.zip",
+      "sha256": "d8ad7d5eef920f50b629121b64ba8123c22ec4f6dadd14da5cd826d1c50f420a",
+      "homepage": "https://github.com/hindermath/spec-kit-preset-project-statistics-governance",
+      "documentation": "https://github.com/hindermath/spec-kit-preset-project-statistics-governance/blob/main/README.md",
+      "license": "MIT",
+      "requires": {
+        "speckit_version": ">=0.12.8"
+      },
+      "provides": {
+        "templates": 4,
+        "commands": 3,
+        "scripts": 2
+      },
+      "tags": [
+        "project-statistics",
+        "reproducibility",
+        "governance",
+        "accessibility"
+      ],
+      "created_at": "2026-09-23T00:00:00Z",
+      "updated_at": "2026-09-23T00:00:00Z"
     },
     "screenwriting": {
       "name": "Screenwriting",
@@ -896,16 +986,17 @@
     "specassay": {
       "name": "SpecAssay",
       "id": "specassay",
-      "version": "0.4.12",
+      "version": "0.5.1",
       "description": "Appends durable-ID, Carries, and SpecAssay vocabulary onto Spec Kit spec, tasks, and constitution templates.",
       "author": "Rik Dryfoos",
       "repository": "https://github.com/rdryfoos/specassay",
-      "download_url": "https://github.com/rdryfoos/specassay/releases/download/v0.4.12/specassay-preset-0.4.12.zip",
+      "download_url": "https://github.com/rdryfoos/specassay/releases/download/v0.5.1/specassay-preset-0.5.1.zip",
+      "sha256": "41e5b5e807bbb2b7d4d90253886122416109465af023d85a110cd522c16848fc",
       "homepage": "https://github.com/rdryfoos/specassay",
       "documentation": "https://github.com/rdryfoos/specassay/blob/main/presets/specassay/README.md",
       "license": "MIT",
       "requires": {
-        "speckit_version": ">=0.14.0"
+        "speckit_version": ">=0.14.0,<2.0.0"
       },
       "provides": {
         "templates": 3,
@@ -918,7 +1009,7 @@
         "sdd"
       ],
       "created_at": "2026-08-14T00:00:00Z",
-      "updated_at": "2026-08-21T00:00:00Z"
+      "updated_at": "2026-09-23T00:00:00Z"
     },
     "test-first-governance": {
       "name": "Test-First Governance",

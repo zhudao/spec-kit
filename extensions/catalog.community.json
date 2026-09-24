@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "updated_at": "2026-09-18T00:00:00Z",
+  "updated_at": "2026-09-23T00:00:00Z",
   "catalog_url": "https://raw.githubusercontent.com/github/spec-kit/main/extensions/catalog.community.json",
   "extensions": {
     "adrkit": {
@@ -47,10 +47,11 @@
     "aee": {
       "name": "Applied Epistemic Engineering",
       "id": "aee",
-      "description": "Challenges claims, traces evidence, propagates uncertainty, and routes epistemic failures between Spec Kit phases.",
+      "description": "Challenge claims, trace evidence, propagate uncertainty, and route epistemic failures across phases",
       "author": "ElectroHire",
-      "version": "1.0.0",
-      "download_url": "https://github.com/electrohire/spec-kit-aee/archive/refs/tags/v1.0.0.zip",
+      "version": "1.0.1",
+      "download_url": "https://github.com/electrohire/spec-kit-aee/archive/refs/tags/v1.0.1.zip",
+      "sha256": "691d860ffade54e2fb5dd17f34cc72784ad65ca23ff61281313bb4366d46d47b",
       "repository": "https://github.com/electrohire/spec-kit-aee",
       "homepage": "https://github.com/electrohire/spec-kit-aee",
       "documentation": "https://github.com/electrohire/spec-kit-aee#readme",
@@ -62,8 +63,18 @@
         "speckit_version": ">=1.0.0",
         "tools": [
           {
+            "name": "python",
+            "version": ">=3.11",
+            "required": true
+          },
+          {
             "name": "aee",
-            "version": ">=1.0.0",
+            "version": ">=1.0.2,<2",
+            "required": true
+          },
+          {
+            "name": "spec-kit-evaluator",
+            "version": ">=1.0.0,<2",
             "required": true
           }
         ]
@@ -83,7 +94,7 @@
       "downloads": 0,
       "stars": 0,
       "created_at": "2026-09-15T00:00:00Z",
-      "updated_at": "2026-09-15T00:00:00Z"
+      "updated_at": "2026-09-23T00:00:00Z"
     },
     "aide": {
       "name": "AI-Driven Engineering (AIDE)",
@@ -1796,6 +1807,52 @@
       "stars": 0,
       "created_at": "2026-08-17T00:00:00Z",
       "updated_at": "2026-08-17T00:00:00Z"
+    },
+    "design": {
+      "name": "Spec Kit Design System",
+      "id": "design",
+      "description": "Give it an RFC. It runs the Spec Kit workflow and implements the change using your design system.",
+      "author": "artursopelnik",
+      "version": "0.1.0",
+      "download_url": "https://github.com/artursopelnik/spec-kit-design-system/archive/refs/tags/v0.1.0.zip",
+      "sha256": "787047d6a52399a7092f8bccca9268fc67f17de66723675fc83a9cd72604de4e",
+      "repository": "https://github.com/artursopelnik/spec-kit-design-system",
+      "homepage": "https://github.com/artursopelnik/spec-kit-design-system",
+      "documentation": "https://github.com/artursopelnik/spec-kit-design-system/blob/main/README.md",
+      "changelog": "https://github.com/artursopelnik/spec-kit-design-system/blob/main/CHANGELOG.md",
+      "license": "MIT",
+      "category": "integration",
+      "effect": "read-write",
+      "requires": {
+        "speckit_version": ">=1.0.0,<2.0.0",
+        "tools": [
+          {
+            "name": "python3",
+            "version": ">=3.9",
+            "required": true
+          },
+          {
+            "name": "bash",
+            "required": true
+          }
+        ]
+      },
+      "provides": {
+        "commands": 4,
+        "hooks": 3
+      },
+      "tags": [
+        "design-system",
+        "design-tokens",
+        "accessibility",
+        "autonomous",
+        "reuse"
+      ],
+      "verified": false,
+      "downloads": 0,
+      "stars": 0,
+      "created_at": "2026-09-23T00:00:00Z",
+      "updated_at": "2026-09-23T00:00:00Z"
     },
     "ears": {
       "name": "EARS Requirements Syntax",
@@ -4995,8 +5052,9 @@
       "id": "specassay-check",
       "description": "Gate 2 refuses silent gaps and emits a trace-manifest (`trace-manifest.json`).",
       "author": "Rik Dryfoos",
-      "version": "0.4.12",
-      "download_url": "https://github.com/rdryfoos/specassay/releases/download/v0.4.12/specassay-check-0.4.12.zip",
+      "version": "0.5.1",
+      "download_url": "https://github.com/rdryfoos/specassay/releases/download/v0.5.1/specassay-check-0.5.1.zip",
+      "sha256": "874728251c850e84d71f7a94dbdc326073703a8b408690d87a62b68d43dc6eff",
       "repository": "https://github.com/rdryfoos/specassay",
       "homepage": "https://www.specassay.com",
       "documentation": "https://github.com/rdryfoos/specassay/blob/main/extensions/specassay-check/README.md",
@@ -5005,7 +5063,7 @@
       "category": "visibility",
       "effect": "read-write",
       "requires": {
-        "speckit_version": ">=0.14.0",
+        "speckit_version": ">=0.14.0,<2.0.0",
         "tools": [
           {
             "name": "bash",
@@ -5019,7 +5077,7 @@
         ]
       },
       "provides": {
-        "commands": 2,
+        "commands": 5,
         "hooks": 1
       },
       "tags": [
@@ -5033,7 +5091,7 @@
       "downloads": 0,
       "stars": 0,
       "created_at": "2026-08-13T00:00:00Z",
-      "updated_at": "2026-08-21T00:00:00Z"
+      "updated_at": "2026-09-23T00:00:00Z"
     },
     "specjudge": {
       "name": "SpecJudge — right-size the model before you implement",
@@ -5780,6 +5838,60 @@
       "stars": 0,
       "created_at": "2026-04-25T00:00:00Z",
       "updated_at": "2026-04-25T00:00:00Z"
+    },
+    "threatspec": {
+      "name": "ThreatSpec — Threat Modeling & Security Traceability",
+      "id": "threatspec",
+      "description": "STRIDE and AI/ML threat modeling with threat-to-test traceability and security convergence",
+      "author": "hupe1980",
+      "version": "0.1.0",
+      "download_url": "https://github.com/hupe1980/spec-kit-threatspec/archive/refs/tags/v0.1.0.zip",
+      "sha256": "6003b667e01e51a4637e4b6c2f2cea644674449f5bd2e7ed9301d3459a5a9c40",
+      "repository": "https://github.com/hupe1980/spec-kit-threatspec",
+      "homepage": "https://github.com/hupe1980/spec-kit-threatspec",
+      "documentation": "https://github.com/hupe1980/spec-kit-threatspec/blob/main/README.md",
+      "changelog": "https://github.com/hupe1980/spec-kit-threatspec/blob/main/CHANGELOG.md",
+      "license": "MIT",
+      "category": "process",
+      "effect": "read-write",
+      "requires": {
+        "speckit_version": ">=1.0.0",
+        "tools": [
+          {
+            "name": "python",
+            "version": ">=3.8",
+            "required": true
+          },
+          {
+            "name": "pyyaml",
+            "required": true
+          },
+          {
+            "name": "uv",
+            "required": false
+          },
+          {
+            "name": "jsonschema",
+            "required": false
+          }
+        ]
+      },
+      "provides": {
+        "commands": 3,
+        "hooks": 7
+      },
+      "tags": [
+        "security",
+        "threat-modeling",
+        "llm",
+        "agentic",
+        "traceability"
+      ],
+      "verified": false,
+      "downloads": 0,
+      "stars": 0,
+      "created_at": "2026-09-23T00:00:00Z",
+      "updated_at": "2026-09-23T00:00:00Z"
     },
     "tldr": {
       "name": "Spec Kit TLDR",
