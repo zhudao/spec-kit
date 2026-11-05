@@ -26,7 +26,7 @@ Treat unfamiliar sources as unvetted until you have reviewed them. For workflow
 components, inspect shell `run` and `env` fields and referenced code, including
 active overlays. Even `strict: true` steps can change executable lookup or
 runtime loading through environment bindings; see
-[reviewing shell execution](../workflows/steps.md#reviewing-shell-execution).
+[reviewing shell execution](../workflow-steps/types.md#reviewing-shell-execution).
 
 | Policy | Effect |
 | --- | --- |
@@ -214,4 +214,4 @@ retention.
 - [Manifest and source assertions](api.md)
 - [Publishing and community submission](publishing.md)
 - [Community bundles](../community/bundles.md)
-- [Shared catalog concepts](../reference/catalogs.md)
+- [Shared catalog concepts](../overview/catalogs.md)

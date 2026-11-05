@@ -41,10 +41,12 @@ discovery-only release remains non-installable by ID even when it appears in
 the version list. Use the component's `catalog list` command to confirm the
 active source and install policy instead of relying on plain `info` output.
 
-You can also browse the maintained community lists for
-[extensions](../community/extensions.md),
-[presets](../community/presets.md), [bundles](../community/bundles.md), and
-[workflow step types](../community/workflow-steps.md).
+You can also browse the community pages for
+[integrations](../community/integrations.md),
+[extensions](../community/extensions.md), [presets](../community/presets.md),
+[workflows](../community/workflows.md),
+[workflow step types](../community/workflow-steps.md), and
+[bundles](../community/bundles.md).
 
 ## Inspect and manage catalog sources
 
@@ -57,7 +59,7 @@ project:
 | Extensions | `specify extension catalog list` | [Extensions](../extensions/catalogs.md) |
 | Presets | `specify preset catalog list` | [Preset catalogs](../presets/catalogs.md) |
 | Workflows | `specify workflow catalog list` | [Workflow catalogs](../workflows/catalogs.md) |
-| Workflow steps | `specify workflow step catalog list` | [Workflow catalogs](../workflows/catalogs.md) |
+| Workflow steps | `specify workflow step catalog list` | [Step catalogs](../workflow-steps/catalogs.md) |
 | Bundles | `specify bundle catalog list` | [Bundle catalogs](../bundles/catalogs.md) |
 
 Each command group also provides `catalog add` and `catalog remove`. Options,
@@ -142,7 +144,7 @@ Use the component-specific publishing guidance when authoring catalog entries:
 | Extensions | [Extension Publishing Guide](../extensions/publishing.md) |
 | Presets | [Preset Publishing Guide](../presets/publishing.md) |
 | Workflows | [Workflow publishing](../workflows/publishing.md) |
-| Workflow steps | [Community workflow step types](../community/workflow-steps.md) |
+| Workflow steps | [Workflow step publishing](../workflow-steps/publishing.md) |
 | Bundles | [Community bundles](../community/bundles.md) |
 
 For example, a reviewed extension catalog can be registered with:
@@ -161,7 +163,7 @@ options and expected entry formats.
 ## Private and offline environments
 
 If a catalog or its component downloads require credentials, configure
-[catalog and download authentication](authentication.md). Authentication is
+[catalog and download authentication](../reference/authentication.md). Authentication is
 opt-in and scoped to explicitly configured hosts.
 
 Behind a firewall, host catalogs and artifacts on approved internal HTTPS
